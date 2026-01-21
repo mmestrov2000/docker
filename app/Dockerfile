@@ -5,13 +5,13 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # 3. Instalacija ovisnosti
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # 4. Kopiranje koda aplikacije
-COPY app.py .
+COPY app.py /app/
 
-# 5. Otkrivanje porta
+# 5. Exposanje porta
 EXPOSE 5000
 
 # 6. Postavljanje varijable okruženja
